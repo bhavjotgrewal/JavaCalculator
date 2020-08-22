@@ -1,27 +1,117 @@
-import javax.swing.JFrame;
-import javax.swing.JTextArea;
-import javax.swing.JButton;
+import javax.swing.*;
+import java.awt.*;
+
 
 public class Calculator {
-    private JFrame frame = new JFrame("Calculator");
-    private JTextArea textScreen = new JTextArea();
 
-    //Constructor
+    private JFrame f = new JFrame("Calculator");
+    private JPanel p = new JPanel(new GridBagLayout());
+    private JTextArea textScreen = new JTextArea();
+    private JButton number1 = new JButton("1");
+    private JButton number2 = new JButton("2");
+    private JButton number3 = new JButton("3");
+    private JButton number4 = new JButton("4");
+    private JButton number5 = new JButton("5");
+    private JButton number6 = new JButton("6");
+    private JButton number7 = new JButton("7");
+    private JButton number8 = new JButton("8");
+    private JButton number9 = new JButton("9");
+    private JButton number0 = new JButton("0");
+    private JButton multiply = new JButton("×");
+    private JButton divide = new JButton("÷");
+    private JButton add = new JButton("+");
+    private JButton subtract = new JButton("-");
+    private JButton sign = new JButton("+/-");
+    private JButton C = new JButton("C");
+    private JButton dot = new JButton(".");
+    private JButton equals = new JButton("=");
+    private GridBagConstraints c = new GridBagConstraints();
+    private Dimension d = new Dimension(75, 50);
+
+    String[] input;
+    String sFirst = "";
+    String sSecond = "";
+    String sTotal = "";
+    int first = 0;
+    int second = 0;
+
     public Calculator() {
 
-        //frame 
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        f.setVisible(true);
+        f.setSize(300,350);
 
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setVisible(true);
-        frame.setSize(400,500);
-        //frame.setResizable(true);
-        frame.setLayout(null);
-
-        //textScreen
-
-        textScreen.setSize(380,100);
+        textScreen.setSize(290,55);
         textScreen.setLocation(7, 5);
         textScreen.setEditable(false);
+        number1.setPreferredSize(d);
+        number2.setPreferredSize(d);
+        number3.setPreferredSize(d);
+        number4.setPreferredSize(d);
+        number5.setPreferredSize(d);
+        number6.setPreferredSize(d);
+        number7.setPreferredSize(d);
+        number8.setPreferredSize(d);
+        number9.setPreferredSize(d);
+        number0.setPreferredSize(d);
+        C.setPreferredSize(d);
+        sign.setPreferredSize(d);
+        dot.setPreferredSize(d);
+        equals.setPreferredSize(d);
+        divide.setPreferredSize(d);
+        multiply.setPreferredSize(d);
+        subtract.setPreferredSize(d);
+        add.setPreferredSize(d);
+
+        c.gridx = 0;
+        c.gridy = 0;
+        p.add(C, c);
+        c.gridx = 1;
+        p.add(sign, c);
+        c.gridx = 2;
+        p.add(divide, c);
+        c.gridx = 3;
+        p.add(multiply, c);
+        c.gridy = 1;
+        c.gridx = 0;
+        p.add(number7, c);
+        c.gridx = 1;
+        p.add(number8, c);
+        c.gridx = 2;
+        p.add(number9, c);
+        c.gridx = 3;
+        p.add(subtract, c);
+        c.gridy = 2;
+        c.gridx = 0;
+        p.add(number4, c);
+        c.gridx = 1;
+        p.add(number5, c);
+        c.gridx = 2;
+        p.add(number6, c);
+        c.gridx = 3;
+        p.add(add, c);
+        c.gridy = 3;
+        c.gridx = 0;
+        p.add(number1, c);
+        c.gridx = 1;
+        p.add(number2, c);
+        c.gridx = 2;
+        p.add(number3, c);
+        c.gridx = 3;
+        c.gridy = 4;
+        c.gridx = 0;
+        p.add(number0, c);
+        c.gridx = 1;
+        c.gridx = 2;
+        p.add(dot, c);
+        c.gridx = 3;
+        p.add(equals, c);
+
+
+        f.add(textScreen);
+        f.add(p);
+        f.add(p, BorderLayout.SOUTH);
+
     }
 
 }
