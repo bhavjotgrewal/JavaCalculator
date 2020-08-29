@@ -1,9 +1,13 @@
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.*;
 import java.awt.*;
 
 
 public class Calculator {
 
+    private Font font = new Font("Verdana", Font.BOLD, 20);
     private JFrame f = new JFrame("Calculator");
     private JPanel p = new JPanel(new GridBagLayout());
     private JTextArea textScreen = new JTextArea();
@@ -36,6 +40,8 @@ public class Calculator {
     int second = 0;
 
     public Calculator() {
+
+        textScreen.setFont(font);
 
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.setVisible(true);
@@ -106,6 +112,87 @@ public class Calculator {
         p.add(dot, c);
         c.gridx = 3;
         p.add(equals, c);
+
+        number1.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent arg0) {
+                textScreen.append("1");
+            }
+        });
+        number2.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent arg0) {
+                textScreen.append("2");
+            }
+        });
+        number3.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent arg0) {
+                textScreen.append("3");
+            }
+        });
+        number4.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent arg0) {
+                textScreen.append("4");
+            }
+        });
+        number5.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent arg0) {
+                textScreen.append("5");
+            }
+        });
+        number6.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent arg0) {
+                textScreen.append("6");
+            }
+        });
+        number7.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent arg0) {
+                textScreen.append("7");
+            }
+        });
+        number8.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent arg0) {
+                textScreen.append("8");
+            }
+        });
+        number9.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent arg0) {
+                textScreen.append("9");
+            }
+        });
+        number0.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent arg0) {
+                textScreen.append("0");
+            }
+        });
+        multiply.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent arg0) {
+                textScreen.append("×");
+            }
+        });
+        divide.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent arg0) {
+                textScreen.append("÷");
+            }
+        });
+        add.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent arg0) {
+                textScreen.append("+");
+            }
+        });
+        subtract.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent arg0) {
+                textScreen.append("-");
+            }
+        });
+        C.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent arg0) {
+                textScreen.setText("");
+            }
+        });
+        dot.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent arg0) {
+                textScreen.append(".");
+            }
+        });
 
 
         f.add(textScreen);
